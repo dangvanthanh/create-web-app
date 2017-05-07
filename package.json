@@ -1,0 +1,22 @@
+{
+  "name": "create-web-app",
+  "version": "0.0.1",
+  "description": "Create web app",
+  "bin": {
+    "create-web-app": "bin/cwa.js",
+    "cwa": "bin/cwa.js"
+  },
+  "engines": {
+    "node": ">= 6"
+  },
+  "repository": "https://github.com/dangvanthanh/create-web-app.git",
+  "author": "Dang Van Thanh <dangvanthanh@dangthanh.org>",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^1.1.3",
+    "co": "^4.6.0",
+    "inquirer": "^3.0.6",
+    "tildify": "^1.2.0",
+    "yargs": "^8.0.1"
+  }
+}
