@@ -4,7 +4,7 @@ const yargs = require('yargs')
 const chalk = require('chalk')
 const pkg = require('../package')
 const createWebApp = require('../lib')
-const _ = require('../lib/utils/output')
+const _ = require('../lib/utils')
 
 const argv = yargs
   .usage('\ncwa <project-name>')
