@@ -17,6 +17,7 @@
     "co": "^4.6.0",
     "inquirer": "^3.0.6",
     "kopy": "^7.0.0",
+    "shelljs": "^0.7.7",
     "tildify": "^1.2.0",
     "yargs": "^8.0.1",
     "yarn-install": "^0.3.0"

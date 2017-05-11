@@ -1,0 +1,9 @@
+{
+  "complierOptions": {
+    "module": "amd",
+    "noImplicitAny": true,
+    "removeComments": false,
+    "preserveConstEnums": true,
+    "sourceMap": false
+  }
+}
