@@ -1,9 +1,17 @@
 {
-  "complierOptions": {
-    "module": "amd",
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "isolatedModules": false,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "declaration": true,
     "noImplicitAny": true,
-    "removeComments": false,
-    "preserveConstEnums": true,
-    "sourceMap": false
+    "noImplicitUseStrict": false,
+    "strictNullChecks": true,
+    "noEmitHelpers": true,
+    "noLib": false,
+    "outDir": "dist/js"
   }
 }

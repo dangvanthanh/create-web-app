@@ -1,6 +1,21 @@
 {
   "name": "<%= name %>",
-  "description": "<%= description %>",
   "version": "0.0.0",
-  "license": "MIT"
+  "description": "<%= description %>",
+  "scripts": {
+    "watch:css": "postcss src/css/app.css -o dist/css/app.css -w",
+    "build:css": "postcss src/css/app.css -o dist/css/app.css"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    <%_ if (css === 'postcss') { -%>
+    "cssnano": "^3.10.0",
+    "postcss-cli": "^3.2.0",
+    "postcss-cssnext": "^2.10.0",
+    "postcss-import": "^9.1.0",
+    "postcss-nested": "^1.0.1",
+     <%_ } -%>
+     "npm-run-all": "^4.0.2"
+  }
 }
