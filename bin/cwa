@@ -2,6 +2,7 @@
 
 const yargs = require('yargs')
 const chalk = require('chalk')
+const updateNotifier = require('update-notifier')
 const pkg = require('../package')
 const createWebApp = require('../lib')
 const _ = require('../lib/utils')
@@ -14,6 +15,10 @@ const argv = yargs
   .epilogue('for more information, find our manual at https://github.com/dangvanthanh/create-web-app')
   .help()
   .argv
+
+const notifier = updateNotifier({pkg})
+notifier.notify()
+_.log(notifier.update)
 
 const name = argv._[0]
 delete argv._
