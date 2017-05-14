@@ -3,8 +3,28 @@
   "version": "0.0.0",
   "description": "<%= description %>",
   "scripts": {
+    <%_ if (css === 'postcss') { -%>
     "watch:css": "postcss src/css/app.css -o dist/css/app.css -w",
-    "build:css": "postcss src/css/app.css -o dist/css/app.css"
+    "build:css": "postcss src/css/app.css -o dist/css/app.css",
+    <%_ } -%>
+    <%_ if (css === 'sass') { -%>
+    "watch:css": "node-sass src/sass/app.scss -o dist/sass/app.scss -w",
+    "build:css": "node-sass src/sass/app.scss -o dist/sass/app.scss",
+    <%_ } -%>
+    <%_ if (css === 'less') { -%>
+    "watch:css": "catw -w 'src/less/**/*.less' -c 'npm run build:css'",
+    "build:css": "lessc src/less/app.less dist/css/app.css",
+    <%_ } -%>
+    <%_ if (js === 'typescript') { -%>
+    "watch:js": "tsc -w",
+    "build:js": "tsc",
+    <%_ } -%>
+    <%_ if (js === 'coffeescript') { -%>
+    "watch:js": "coffee --watch --compile --output dist/js/ src/js/",
+    "build:js": "coffee --compile --output dist/js/ src/js/",
+    <%_ } -%>
+    "dev": "npm-run-all -p watch:css watch:js",
+    "build": "npm-run-all -p build:css build:js"
   },
   "author": "",
   "license": "MIT",
@@ -16,6 +36,19 @@
     "postcss-import": "^9.1.0",
     "postcss-nested": "^1.0.1",
      <%_ } -%>
-     "npm-run-all": "^4.0.2"
+    <%_ if (css === 'sass') { -%>
+    "node-sass": "^4.5.2",
+    <%_ } -%>
+    <%_ if (css === 'less') { -%>
+    "less": "^2.7.2",
+    "catw": "^1.0.1",
+    <%_ } -%>
+    <%_ if (js === 'typescript') { -%>
+    "typescript": "^2.3.2",
+    <%_ } -%>
+    <%_ if (js === 'coffeescript') { -%>
+    "coffeescript": "^1.12.5",
+    <%_ } -%>
+    "npm-run-all": "^4.0.2"
   }
 }
