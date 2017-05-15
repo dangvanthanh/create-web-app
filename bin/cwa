@@ -5,7 +5,7 @@ const chalk = require('chalk')
 const pkg = require('../package')
 const createWebApp = require('../lib')
 const _ = require('../lib/utils')
-const updateNotifier = require('../lib/shim-update-notifier')
+const updateNotifier = require('update-notifier')
 
 updateNotifier({pkg}).notify()
 
