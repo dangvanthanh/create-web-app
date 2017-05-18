@@ -3,6 +3,14 @@
   "version": "0.0.0",
   "description": "<%= description %>",
   "scripts": {
+    <%_ if (html === 'nunjucks') { -%>
+    "watch:html": "nunjucks **/*.tpl -p src/html -o dist/ -w",
+    "build:html": "nunjucks **/*.tpl -p src/html -o dist/",
+    <%_ } -%>
+    <%_ if (html === 'pug') { -%>
+    "watch:html": "pug src/html -o dist/ -P -w",
+    "build:html": "pug src/html -o dist/ -P",
+    <%_ } -%>
     <%_ if (css === 'postcss') { -%>
     "watch:css": "postcss src/css/app.css -o dist/css/app.css -w",
     "build:css": "postcss src/css/app.css -o dist/css/app.css",
@@ -27,19 +35,26 @@
     "watch:js": "coffee --watch --compile --output dist/js/ src/js/",
     "build:js": "coffee --compile --output dist/js/ src/js/",
     <%_ } -%>
-    "dev": "npm-run-all -p watch:css watch:js",
-    "build": "npm-run-all -p build:css build:js"
+    "serve": "live-server dist/",
+    "dev": "npm-run-all -p serve watch:html watch:css watch:js",
+    "build": "npm-run-all -p build:html build:css build:js"
   },
   "author": "",
   "license": "MIT",
   "devDependencies": {
+    <%_ if (html === 'nunjucks') { -%>
+    "nunjucks-cli": "^0.5.1",
+    <%_ } -%>
+    <%_ if (html === 'pug') { -%>
+    "pug-cli": "^1.0.0-alpha6",
+    <%_ } -%>
     <%_ if (css === 'postcss') { -%>
     "cssnano": "^3.10.0",
     "postcss-cli": "^3.2.0",
     "postcss-cssnext": "^2.10.0",
     "postcss-import": "^9.1.0",
     "postcss-nested": "^1.0.1",
-     <%_ } -%>
+    <%_ } -%>
     <%_ if (css === 'sass') { -%>
     "node-sass": "^4.5.2",
     <%_ } -%>
@@ -58,6 +73,7 @@
     <%_ if (js === 'coffeescript') { -%>
     "coffeescript": "^1.12.5",
     <%_ } -%>
+    "live-server": "^1.2.0",
     "npm-run-all": "^4.0.2"
   }
 }
