@@ -8,12 +8,16 @@
     "build:css": "postcss src/css/app.css -o dist/css/app.css",
     <%_ } -%>
     <%_ if (css === 'sass') { -%>
-    "watch:css": "node-sass src/sass/app.scss -o dist/sass/app.scss -w",
-    "build:css": "node-sass src/sass/app.scss -o dist/sass/app.scss",
+    "watch:css": "node-sass src/sass/app.scss -o dist/css/ -w",
+    "build:css": "node-sass src/sass/app.scss -o dist/css/",
     <%_ } -%>
     <%_ if (css === 'less') { -%>
     "watch:css": "catw -w 'src/less/**/*.less' -c 'npm run build:css'",
     "build:css": "lessc src/less/app.less dist/css/app.css",
+    <%_ } -%>
+    <%_ if (js === 'babel') { -%>
+    "watch:js": "rollup -cw",
+    "build:js": "rollup -c",
     <%_ } -%>
     <%_ if (js === 'typescript') { -%>
     "watch:js": "tsc -w",
@@ -42,6 +46,11 @@
     <%_ if (css === 'less') { -%>
     "less": "^2.7.2",
     "catw": "^1.0.1",
+    <%_ } -%>
+    <%_ if (js === 'babel') { -%>
+    "rollup": "^0.41.6",
+    "rollup-plugin-buble": "^0.15.0",
+    "rollup-watch": "^3.2.2",
     <%_ } -%>
     <%_ if (js === 'typescript') { -%>
     "typescript": "^2.3.2",
