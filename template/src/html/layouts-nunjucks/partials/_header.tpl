@@ -8,7 +8,3 @@
   <title><%= name %></title>
 </head>
 <body>
-  <h1><%= name %></h1>
-  <script src="js/app.js"></script>
-</body>
-</html>

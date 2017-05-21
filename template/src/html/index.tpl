@@ -1,14 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="css/app.js">
-  <title><%= name %></title>
-</head>
-<body>
+{% extends "layouts/_layout.tpl" %}
+
+{% block content %}
   <h1><%= name %></h1>
-  <script src="js/app.js"></script>
-</body>
-</html>
+{% endblock %}

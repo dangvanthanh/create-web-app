@@ -50,10 +50,10 @@
     <%_ } -%>
     <%_ if (css === 'postcss') { -%>
     "cssnano": "^3.10.0",
-    "postcss-cli": "^3.2.0",
+    "postcss-cli": "^4.0.0",
     "postcss-cssnext": "^2.10.0",
-    "postcss-import": "^9.1.0",
-    "postcss-nested": "^1.0.1",
+    "postcss-import": "^10.0.0",
+    "postcss-nested": "^2.0.2",
     <%_ } -%>
     <%_ if (css === 'sass') { -%>
     "node-sass": "^4.5.2",

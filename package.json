@@ -1,6 +1,6 @@
 {
   "name": "create-web-app",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Create web app",
   "bin": {
     "create-web-app": "./bin/cwa",
@@ -17,7 +17,7 @@
     "co": "^4.6.0",
     "figlet": "^1.2.0",
     "inquirer": "^3.0.6",
-    "kopy": "^7.0.0",
+    "kopy": "^7.0.3",
     "node-emoji": "^1.5.1",
     "shelljs": "^0.7.7",
     "tildify": "^1.2.0",
