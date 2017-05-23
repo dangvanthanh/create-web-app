@@ -8,8 +8,8 @@
     "build:html": "nunjucks **/*.tpl -p src/html -o dist/",
     <%_ } -%>
     <%_ if (html === 'pug') { -%>
-    "watch:html": "pug src/html -o dist/ -P -w",
-    "build:html": "pug src/html -o dist/ -P",
+    "watch:html": "pug src/html/ -o dist/ -P -w",
+    "build:html": "pug src/html/ -o dist/ -P",
     <%_ } -%>
     <%_ if (css === 'postcss') { -%>
     "watch:css": "postcss src/css/app.css -o dist/css/app.css -w",
@@ -22,6 +22,10 @@
     <%_ if (css === 'less') { -%>
     "watch:css": "catw -w 'src/less/**/*.less' -c 'npm run build:css'",
     "build:css": "lessc src/less/app.less dist/css/app.css",
+    <%_ } -%>
+    <%_ if (css === 'stylus') { -%>
+    "watch:css": "stylus src/stylus/app.styl -o dist/css/app.css -w",
+    "build:css": "stylus src/stylus/app.styl -o dist/css/app.css",
     <%_ } -%>
     <%_ if (js === 'babel') { -%>
     "watch:js": "rollup -cw",
@@ -61,6 +65,9 @@
     <%_ if (css === 'less') { -%>
     "less": "^2.7.2",
     "catw": "^1.0.1",
+    <%_ } -%>
+    <%_ if (css === 'stylus') { -%>
+    "stylus": "^0.54.5",
     <%_ } -%>
     <%_ if (js === 'babel') { -%>
     "rollup": "^0.41.6",
