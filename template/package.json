@@ -20,7 +20,7 @@
     "build:css": "node-sass src/sass/app.scss -o dist/css/",
     <%_ } -%>
     <%_ if (css === 'less') { -%>
-    "watch:css": "catw -w 'src/less/**/*.less' -c 'npm run build:css'",
+    "watch:css": "watch 'npm run build:css' src/less/",
     "build:css": "lessc src/less/app.less dist/css/app.css",
     <%_ } -%>
     <%_ if (css === 'stylus') { -%>
@@ -64,7 +64,7 @@
     <%_ } -%>
     <%_ if (css === 'less') { -%>
     "less": "^2.7.2",
-    "catw": "^1.0.1",
+    "watch": "^1.0.2",
     <%_ } -%>
     <%_ if (css === 'stylus') { -%>
     "stylus": "^0.54.5",
