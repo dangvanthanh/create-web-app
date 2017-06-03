@@ -83,5 +83,9 @@
     "autoprefixer": "^7.1.1",
     "live-server": "^1.2.0",
     "npm-run-all": "^4.0.2"
-  }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ]
 }
