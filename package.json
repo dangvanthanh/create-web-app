@@ -13,7 +13,7 @@
   "author": "Dang Van Thanh <dangvanthanh@dangthanh.org>",
   "license": "MIT",
   "dependencies": {
-    "chalk": "^1.1.3",
+    "chalk": "^2.0.1",
     "co": "^4.6.0",
     "figlet": "^1.2.0",
     "inquirer": "^3.0.6",
