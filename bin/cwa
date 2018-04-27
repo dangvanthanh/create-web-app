@@ -1,36 +1,40 @@
 #! /usr/bin/env node
 
-const yargs = require('yargs')
-const chalk = require('chalk')
-const pkg = require('../package')
-const createWebApp = require('../lib')
-const _ = require('../lib/utils')
+const yargs = require('yargs');
+const chalk = require('chalk');
+const pkg = require('../package');
+const createWebApp = require('../lib');
+const _ = require('../lib/utils');
 
 const argv = yargs
   .usage('\ncwa <project-name>')
   .version(pkg.version)
   .alias('h', 'help')
   .alias('v', 'version')
-  .epilogue('for more information, find our manual at https://github.com/dangvanthanh/create-web-app')
-  .help()
-  .argv
+  .epilogue(
+    'for more information, find our manual at https://github.com/dangvanthanh/create-web-app'
+  )
+  .help().argv;
 
-const name = argv._[0]
-delete argv._
+const name = argv._[0];
+delete argv._;
 
-const options = Object.assign({
-  name
-}, argv)
+const options = Object.assign(
+  {
+    name
+  },
+  argv
+);
 
-process.stdout.write('\x1Bc')
+process.stdout.write('\x1Bc');
 createWebApp(options).catch(err => {
-  _.error('Error occurs during initializing a new project:\n')
+  _.error('Error occurs during initializing a new project:\n');
   if (err.name === 'AppError') {
-    _.log(chalk.red(err.message))
+    _.log(chalk.red(err.message));
   } else {
-    _.log(err.stack)
+    _.log(err.stack);
   }
 
-  _.log()
-  process.exit(1)
-})
+  _.log();
+  process.exit(1);
+});

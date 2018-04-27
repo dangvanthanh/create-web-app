@@ -1,6 +1,6 @@
 {
   "name": "create-web-app",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Create web app",
   "bin": {
     "create-web-app": "./bin/cwa",
@@ -16,13 +16,13 @@
     "chalk": "^2.0.1",
     "co": "^4.6.0",
     "figlet": "^1.2.0",
-    "inquirer": "^3.0.6",
-    "kopy": "^7.0.3",
+    "inquirer": "^5.2.0",
+    "kopy": "^8.3.0",
     "node-emoji": "^1.5.1",
-    "shelljs": "^0.7.7",
+    "shelljs": "^0.8.1",
     "tildify": "^1.2.0",
     "update-notifier": "^2.1.0",
-    "yargs": "^8.0.1",
-    "yarn-install": "^0.3.0"
+    "yargs": "^11.0.0",
+    "yarn-install": "^1.0.0"
   }
 }

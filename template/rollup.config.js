@@ -1,11 +1,18 @@
-import buble from 'rollup-plugin-buble'
+import buble from 'rollup-plugin-buble';
+import nodeResolve from 'rollup-plugin-node-resolve';
+import commonjs from 'rollup-plugin-commonjs';
 
 export default {
-  entry: 'src/js/app.js',
+  input: 'src/js/app.js',
+  output: {
+    name: 'app',
+    file: 'dist/js/app.js',
+    format: 'umd',
+    sourcemap: true
+  },
   plugins: [
-    buble()
-  ],
-  targets: [
-    { dest: 'dist/js/app.js', format: 'es' }
+    buble(),
+    nodeResolve({ browser: true, jsnext: true, main: true }),
+    commonjs()
   ]
 }

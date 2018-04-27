@@ -70,9 +70,10 @@
     "stylus": "^0.54.5",
     <%_ } -%>
     <%_ if (js === 'babel') { -%>
-    "rollup": "^0.41.6",
-    "rollup-plugin-buble": "^0.15.0",
-    "rollup-watch": "^3.2.2",
+    "rollup": "^0.58.2",
+    "rollup-plugin-buble": "^0.19.2",
+    "rollup-plugin-commonjs": "^9.1.0",
+    "rollup-plugin-node-resolve": "^3.3.0",
     <%_ } -%>
     <%_ if (js === 'typescript') { -%>
     "typescript": "^2.3.2",
@@ -85,7 +86,8 @@
     "npm-run-all": "^4.0.2"
   },
   "browserslist": [
-    "> 1%",
-    "last 2 versions"
+    ">0.25%",
+    "not ie 11",
+    "not op_mini all"
   ]
 }
